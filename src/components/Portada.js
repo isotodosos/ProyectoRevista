@@ -98,10 +98,10 @@ render() {
 
     
     return (
-        <section className="SectionPortada container">
+        <section className="SectionPortada">
             <div>
                 <h2 className="col-12">Últimas Noticias</h2>
-                <div className="card-deck">
+                <div className="row">
                 
 
                     {/*this.state.articles &&*/}
@@ -110,11 +110,12 @@ render() {
                         this.state.resultado.map((article, i) => {    
                             return (
                                 
-                                <div className="card " style={PStyle} key={i}>   
+                                <div className="cromo" style={PStyle} key={i}>   
                                     <img src={this.url + "/get-image/" + article.image} className="card-img-top" alt={article.title} />
-                                    <div className="card-body">
-                                        <h5 className="card-title">{article.title}</h5>
-                                        <p className="card-text">{article.category}</p>
+                                    <div className="cromo-body">
+                                        <h6>{'~' + article.category + '~'}</h6>
+                                        <h4>{article.title}</h4>
+                                        
                                         {/*<a href="#" className="btn btn-primary">Leer Noticia</a>*/}
                                         <NavLink className="nav-link" to={"/Noticia/"+ article._id}>Leer Noticia</NavLink>
                                     </div>

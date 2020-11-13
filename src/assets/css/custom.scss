@@ -38,10 +38,38 @@
     div{
         h2{
             color:rgb(95, 95, 95);
+            margin-top: 20px;
         }
         div{
-            div{
+            margin-left: 60px;
+            margin-bottom: 20px;
+            div.cromo{
                 background-color:rgb(163, 164, 241);
+                margin-top: 15px;
+                margin-bottom: 20px;
+                margin-right: 10px;
+                margin-left: 10px;
+                border-radius: 5px;
+                border: 1px solid rgb(54, 54, 241);
+                div.cromo-body{
+                    
+                    margin-left: 0px;
+                    h6{
+                        margin-top: 10px;
+
+                    }
+                    h4{
+                        
+                        padding-left: 5px;
+                        height: 150px;
+                        
+                    }
+                    & .nav-link{
+                        color: white;
+                    
+                    }
+                }
+                
                
             }
         }

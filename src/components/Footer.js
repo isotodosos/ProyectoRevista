@@ -10,7 +10,7 @@ class Footer extends Component {
             <section className="SectionFooter">
                 <div className="row">
 
-                    <NavLink className="linkFooter col-3" to="/Noticias/Cultura">CULTURA</NavLink>
+                    <NavLink className="linkFooter col-3" to="/Noticias/Cultura">Cultura</NavLink>
                     <NavLink className="linkFooter col-3" to="/Noticias/Sociedad">Sociedad</NavLink>
                     <NavLink className="linkFooter col-3" to="/Noticias/Economia">Economia</NavLink>
                     <NavLink className="linkFooter col-3" to="/Noticias/Deportes">Deportes</NavLink>

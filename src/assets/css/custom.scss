@@ -55,6 +55,7 @@
                     
                     margin-left: 0px;
                     h6{
+                        color:rgb(95, 95, 95);
                         margin-top: 10px;
 
                     }
@@ -66,6 +67,12 @@
                     }
                     & .nav-link{
                         color: white;
+                        background-color: rgb(163, 164, 241);
+                        
+                        &:hover{
+                            color: white;
+                            text-shadow: 2px 2px 4px #000000;
+                        }
                     
                     }
                 }

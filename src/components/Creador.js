@@ -36,27 +36,38 @@ class Creador extends Component {
         
     }
 
+   
+
     
 
 
     verificar = () => {
-       
-        
+
+        //console.log(this.contentRef.current.value);
+
         this.setState({
             article: {
                 title: this.titleRef.current.value,
                 author: this.authorRef.current.value,
                 font: this.fontRef.current.value,
                 category: this.categoryRef.current.value,
-                content: this.contentRef.current.value,
+                content: this.contentRef.current.value
                 
                 
             }
 
         });
 
+       
+
         this.validator.showMessages();
         this.forceUpdate();
+       
+       
+        
+        
+
+        
         
     }
 
@@ -74,27 +85,33 @@ class Creador extends Component {
 
 
     crear = (e) => {
+
         e.preventDefault();
-        
+
         this.verificar();
+        
+
+       
 
         if (this.validator.allValid()) {
             
-
+            
             axios.post(this.url + "/save", this.state.article)
             .then((res) => {
+                //console.log(res);
                 this.setState({
                     article: res.data.article,
                     status: "waiting"
                 })
                 console.log("Se ha ido por el correcto");
-
+            
                 swal(  // para distintos tipos de pop up visitar la pagina swal
                     'Articulo creado',
                     'El articulo se ha creado correctamente',
-                    'success'
+                    'success',
+                    
                 );
-
+                
                 if(this.state.selectedFile != null){
 
                     //sacar el id del articulo guardado
@@ -140,7 +157,7 @@ class Creador extends Component {
                 })
             })
             
-
+         
         }
         // si no esta todo validado..
         else{
@@ -159,31 +176,37 @@ class Creador extends Component {
     
 
     render(){
+        
 
         if (this.state.article && this.state.status === "success") {
             return (<Redirect to="/Inicio" />);
 
         }
-       
+        
 
         return(
-            <section className="container">
-                <form onSubmit = {this.crear}>
 
+            
+            
+            <section className="container SectionCreador">
+                <h2> Crear artículo </h2>
+                <hr></hr>
+                <form onSubmit = {this.crear}>
+                    
                     
                     <div className="form-group ">
                         
-                        <input placeholder="titulo" name="title" ref={this.titleRef} className="col-10" required />
+                        <input placeholder="titulo" onChange={this.verificar} name="title" ref={this.titleRef} className="col-10" required />
                         {/*this.validator.message('title', this.state.article.title, 'required|min:20|max:150')*/}
-                        <input placeholder="Autor"  name="author" ref={this.authorRef} className="col-7" required/>
-                        <input placeholder="Fuente"  name="font" ref={this.fontRef} className="col-3" required/>
+                        <input placeholder="Autor" onChange={this.verificar} name="author" ref={this.authorRef} className="col-6" required/>
+                        <input placeholder="Fuente" onChange={this.verificar} name="font" ref={this.fontRef} className="col-3" required/>
                         
                     </div>
 
                     <div className="form-group">
 
                         
-                        <select  className="form-control" name="category" ref={this.categoryRef} id="exampleFormControlSelect1" className="col-10" required>
+                        <select  className="form-control" onChange={this.verificar} name="category" ref={this.categoryRef} id="exampleFormControlSelect1" className="col-10" required>
                             {/*<option>Selecciona la categoría del artículo</option>*/}
                             <option>Cultura</option>
                             <option>Sociedad</option>
@@ -194,12 +217,12 @@ class Creador extends Component {
 
 
                     <div className="form-group">
-                        <label htmlFor="exampleFormControlTextarea1">Escribir artículo</label>
-                        <textarea className="form-control" name="content" ref={this.contentRef} id="exampleFormControlTextarea1" rows="30" required></textarea>
+                        <label htmlFor="exampleFormControlTextarea1">Contenido</label>
+                        <textarea className="form-control" onChange={this.verificar} name="content" ref={this.contentRef} id="exampleFormControlTextarea1" rows="30" required></textarea>
                     </div>
 
                     <div className="form-group ">
-                        <label className="col-6">Adjuntar imagen al artículo:</label>
+                        <label className="col-5">Adjuntar imagen al artículo:</label>
                         <input type="file"name="file0" ref={this.fileRef} onChange={this.fileChange} className="col-6"/>
                     </div>
 

@@ -40,6 +40,9 @@
             color:rgb(95, 95, 95);
             margin-top: 20px;
         }
+        hr{
+            width: 85%;
+        }
         div{
             margin-left: 60px;
             margin-bottom: 20px;
@@ -83,4 +86,139 @@
     }
 }
 
+.SectionNoticias{
+    div{
+        h2{
+            color:rgb(95, 95, 95);
+            margin-top: 20px;
+        }
+        section{
+            margin-top: 30px;
+            margin-bottom: 20px;
 
+            div{
+                margin-top: 15px;
+                img{
+                    border-radius: 5%;
+                }
+                h3{
+                    margin-top: 30px;
+                    .nav-link{
+                        color:rgb(95, 95, 95);
+                        &:hover{
+                            color: white;
+                            text-shadow: 2px 2px 4px #000000;
+                            
+                            
+                        }
+                    }
+                    
+                }
+                 
+            }
+
+        }
+    }
+}
+
+.SectionCreador{
+    h2{
+        color:rgb(95, 95, 95);
+        margin-top: 20px;
+    }
+    form{
+        margin-top: 10px;
+        margin-bottom: 30px;
+        div{
+            &:nth-child(1){
+                width: 90%;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+            &:nth-child(2){
+                width: 90%;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+            input{
+                margin-top: 10px;
+                border: 1px solid $ColorP;
+                border-radius: 4px;
+
+                &:nth-child(2){
+                    margin-left: 0px;
+                    margin-right: 70px;
+                }
+                &:nth-child(3){
+                    margin-left: 15px;
+                   
+                }
+
+                
+                
+            }
+            
+            
+            select{
+                color: gray;
+                border: 1px solid $ColorP;
+                border-radius: 4px;
+                height: 28px;
+            }
+            label{
+                color: gray;
+            }
+            textarea{
+                width: 80%;
+                margin-left: 10%;
+                margin-left: 10%;
+                border: 1px solid $ColorP;
+                border-radius: 4px;
+                background-color: rgb(241, 245, 245);
+            }
+
+            &:nth-child(4) input{
+                border: none;
+            }
+        }
+
+        
+    }
+}
+
+.SectionNoticia{
+    margin-top: 40px;
+    margin-bottom: 60px;
+    img{
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+        border-radius: 2%;
+    }
+  
+    div{
+        margin-top: 10px;
+        
+        h6{
+            width: 20%;
+            margin-left: 20%;
+            color: gray;
+            
+            
+        }
+    }
+    h3{
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+    p{
+        text-align: left;
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}

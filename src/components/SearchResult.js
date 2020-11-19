@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import Global from '../Global';
-
+import {NavLink} from 'react-router-dom';
 
 class SearchResult extends Component {
 
@@ -57,21 +57,36 @@ class SearchResult extends Component {
        
             var resultado =  this.state.articles.map((article, i)=> {
                 return(
-                <div key={i} className="row" >
+                /*<div key={i} className="row" >
                     <img src={this.url +"/get-image/"+article.image} alt={article.image} className="col-4"/>
                     <h3 className="col-8">{article.title}</h3>
                 </div>
-                
+                */
+               <div key={i} className="row resultado" >
+                    <img src={this.url +"/get-image/"+article.image} alt={article.image} className="col-4"/>
+                    <h3 className="col-8"><NavLink className="nav-link" to={"/Noticia/"+ article._id}>{article.title}</NavLink></h3>
+                    
+                   
+                </div>
                 )
             })
 
             return(
-            <section className="container">    
+            /*<section className="container">    
                 <div>
                     <h1> Artículos encontrados con {this.state.search}  </h1>
                     <section className = "SectionArticulos">{resultado}</section>
                 </div>
             </section>
+            */
+           <section className="container SectionNoticias">    
+                    <div>
+                        
+                        <h2> Artículos encontrados con {this.state.search}  </h2>
+                        <hr></hr>
+                        <section className = "SectionArticulos">{resultado}</section>
+                    </div>
+                </section>
             )
 
         }

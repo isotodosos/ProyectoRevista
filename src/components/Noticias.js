@@ -6,6 +6,7 @@ import axios from 'axios';
 
 import Global from '../Global';
 import { withRouter } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 class Noticias extends Component {
 
@@ -126,9 +127,10 @@ class Noticias extends Component {
        
             var resultado =  this.state.articles.map((article, i)=> {
                 return(
-                <div key={i} className="row" >
+                <div key={i} className="row resultado" >
                     <img src={this.url +"/get-image/"+article.image} alt={article.image} className="col-4"/>
-                    <h3 className="col-8">{article.title}</h3>
+                    <h3 className="col-8"><NavLink className="nav-link" to={"/Noticia/"+ article._id}>{article.title}</NavLink></h3>
+                    
                    
                 </div>
                 
@@ -137,10 +139,11 @@ class Noticias extends Component {
 
             
             return(
-                <section className="container">    
+                <section className="container SectionNoticias">    
                     <div>
                         
-                        <h1> Sección {prueba /*this.state.articles[2].category*/} </h1>
+                        <h2> Sección {prueba /*this.state.articles[2].category*/} </h2>
+                        <hr></hr>
                         <section className = "SectionArticulos">{resultado}</section>
                     </div>
                 </section>

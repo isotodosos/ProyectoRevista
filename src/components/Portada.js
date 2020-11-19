@@ -76,9 +76,9 @@ class Portada extends Component {
                     status: "success",
                     articles: null
 
-                })
-                //console.log(this.state.status);
             })
+                //console.log(this.state.status);
+        })
 
 
 
@@ -101,6 +101,7 @@ render() {
         <section className="SectionPortada">
             <div>
                 <h2 className="col-12">Últimas Noticias</h2>
+                <hr></hr>
                 <div className="row">
                 
 
